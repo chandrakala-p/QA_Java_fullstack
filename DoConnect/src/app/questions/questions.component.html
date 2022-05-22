@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class=" border border-class">
+    <h2 class="h2-class">Question List</h2>
+  </div>
+  <p class="text-danger">{{msg2}}</p>
+  <button mat-raised-button class="btn btn-info " (click)="addQuestion()">Ask Question</button>
+  <!-- style="float: right; margin:10px; -->
+  <div class="col-md-3" style="margin:10px">
+    <form>
+      <input type="text" [(ngModel)]="question" class="form-control " (input)="search()" name="question"
+        placeholder="Have a question? search Now">
+    </form>
+  </div>
+  <table class="table table-bordered border-primary table-hover">
+    <thead class="table table-primary">
+      <tr>
+        <th scope="col">Id</th>
+        <th style="width:70%" scope="col">Questions</th>
+        <th scope="col">Show Answers</th>
+        <th scope="col">Add Answers</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+  </table>
+
+  <div class="card w-100 ">
+    <table *ngFor="let qs of questions">
+      <td> {{qs.id}} </td>
+      <td style="width: 70%; text-align: center;"> {{qs.question}} </td>
+
+      <td><button class="btn btn-success" (click)="getAllAnswers(qs.id)" type="button" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Show answers</button></td>
+      <p class="text-danger">{{msg1}}</p>
+      <td><button class="btn btn-info" type="button" (click)="addAnswer(qs.id)">Add answer</button></td>
+      <td><button class="btn btn-info" (click)="questionDetails(qs.id)">Details</button></td>
+    </table>
+    <!-- <div class="collapse" id="collapseExample">
+    <div *ngFor="let a of ansList" class="card card-body">
+      {{a.answerString}}
+    </div>
+  </div> -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{disQues.question}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div *ngFor="let a of ansList" class="modal-body">
+        <p> &nbsp; {{a.answerString}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

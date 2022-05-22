@@ -1,0 +1,23 @@
+<br />
+<div class="container border border-info" width="200px">
+    <h3>Create answer</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="answerString"> Answer</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="answer.answerString"
+                    name="answerString">
+            </div><br />
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h4>You submitted successfully!</h4>
+
+    </div>
+    <br>
+    <br>
+    <button (click)=" answersList()" class="btn btn-primary">Back to Answers List</button><br>
+</div>

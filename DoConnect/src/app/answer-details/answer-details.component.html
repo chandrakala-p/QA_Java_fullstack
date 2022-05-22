@@ -1,0 +1,16 @@
+<br />
+<div class="container border border-info" width="200px">
+    <h2>Answers Details</h2>
+    <hr />
+    <div *ngIf="answer">
+        <div>
+            <label><b>Answer: </b></label> {{answer.answerString}}
+        </div>
+
+
+    </div>
+
+    <br>
+    <br>
+    <button (click)=" answersList()" class="btn btn-primary">Back to Answers List</button><br>
+</div>

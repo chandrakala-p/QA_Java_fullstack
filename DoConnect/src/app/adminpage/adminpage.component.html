@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<h1>All Questions</h1>
+<table class="table table-bordered border-primary table-hover">
+    <thead class="table table-danger">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Questions</th>
+        <th scope="col">Status</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let qs of questions">
+          <td> {{qs.id}} </td>
+          <td> {{qs.question}} </td>
+          <td>
+            <button *ngIf="qs.status==''" class="btn btn-success" (click)="approveQuestions(adminId,qs.id)">Approve</button>
+            <p>{{qs.status}}</p>
+          </td>
+          <td><button class="btn btn-danger" (click)="deleteQuestion(qs.id)">Delete</button></td>
+        </tr>
+    </tbody>
+  </table><br/>
+<h1>All Answers</h1>
+  <table class="table table-bordered border-primary table-hover">
+      <thead class="table table-success">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Answers</th>
+          <th scope="col">Status</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let ans of answers">
+            <td> {{ans.id}} </td>
+            <td> {{ans.answerString}} </td>
+            <td>
+              <button *ngIf="ans.status==''" class="btn btn-success" (click)="approveAnswers(adminId,ans.id)">Approve</button>
+              <p>{{ans.status}}</p>
+            </td>
+            <td><button class="btn btn-danger" (click)="deleteAnswer(ans.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

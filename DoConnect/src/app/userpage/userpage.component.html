@@ -1,0 +1,37 @@
+<div class="container-fluid">
+   <h1>All Questions</h1>
+    <table class="table table-bordered border-primary table-hover">
+        <thead>
+          <tr>
+            <th scope="col">QnId</th>
+            <th scope="col">Questions</th>
+            <th scope="col">AnsId</th>
+            <th scope="col">Answers</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let qs of questions">
+              <td> {{qs.id}} </td>
+              <td> {{qs.question}} </td>
+              <td  *ngFor="let ans of answers"> {{ans.id}} </td>
+              <td  *ngFor="let ans of answers"> {{ans.answerString}} </td>
+           </tr>
+        </tbody>
+      </table><br/>
+  <!-- <h1>All Answers</h1>
+      <table class="table table-bordered border-primary table-hover">
+          <thead class="table table-success">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Answers</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let ans of answers">
+                <td> {{ans.id}} </td>
+                <td> {{ans.answerString}} </td>
+            </tr>
+          </tbody>
+        </table>  -->
+ </div>
+ 

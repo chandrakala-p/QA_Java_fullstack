@@ -1,0 +1,22 @@
+<br />
+<div class="container border border-info" width="200px">
+    <div [hidden]="submitted" style="width: 600px;" class="align_center">
+        <h3>Update User</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Answer</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="answer.answerString"
+                    name="answerString">
+            </div><br />
+
+
+
+            <div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <button (click)="answersList()" class="btn btn-primary float-right">Back to Answers List</button><br>
+    </div>
+</div>

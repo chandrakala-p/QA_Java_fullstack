@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class=" border border-class">
+    <h2 class="h2-class">Answer List</h2>
+  </div>
+  <!-- <button mat-raised-button class="btn btn-info " (click)="addAnswer()">Add Answer</button> -->
+  <!-- style="float: right; margin:10px; -->
+  <div class="col-md-3  " style="margin:10px ">
+    <form>
+      <input type="text" [(ngModel)]="answerString" class="form-control " (input)="search()" name="answerString"
+        placeholder="Have a answer? search Now">
+
+    </form>
+  </div>
+  <table class="table table-bordered border-primary table-hover">
+    <thead class="table table-success">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Answers</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let answer of answers">
+        <td> {{answer.id}} </td>
+        <td> {{answer.answerString}} </td>
+
+        <td><button class="btn btn-success" (click)="editAnswer(answer.id)">Update</button></td>
+        <td><button class="btn btn-danger" (click)="deleteAnswer(answer.id)">Delete</button></td>
+        <td><button class="btn btn-info" (click)="answerDetails(answer.id)">Details</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

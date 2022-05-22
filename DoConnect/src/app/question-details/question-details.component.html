@@ -1,0 +1,16 @@
+<br />
+<div class="container border border-info" width="200px">
+    <h2>Questions Details</h2>
+    <hr />
+    <div *ngIf="question">
+        <div>
+            <label><b>Question: </b></label> {{question.question}}
+        </div>
+
+
+    </div>
+
+    <br>
+    <br>
+    <button (click)=" questionsList()" class="btn btn-primary">Back to Questions List</button><br>
+</div>
